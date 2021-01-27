@@ -27,7 +27,7 @@ class PostTest < ActiveSupport::TestCase
     @post.author = 'a' * 31
     assert_not @post.valid?
   end
-
+  
   test "body should not be too short" do
     @post.body = Array.new(9,"blog").join(" ")
     assert_not @post.valid?
