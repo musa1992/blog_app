@@ -1,0 +1,12 @@
+<header>
+    <div class = "container">
+        <%= image_tag "blog.jpeg" , id: "logo" =%>
+        <nav>
+            <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "Home", posts_path %></li>
+                <li><%= link_to "New Post", new_post_path %></li>
+                <li><%= link_to "Help", "#"%></li>
+            </ul>
+        </nav>
+    </div>
+</header>
