@@ -1,29 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Author</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<section class="content-area">
+<% @posts.each do |post| %>
+  <div class="card mb-3" style="max-width: 900px;">
+  <div class="row">
+    <div class="col-md-4">
+    
+    <%= image_tag("blog.jpeg", style: 'max-width: 100%;') %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p><small><%= post.created_at.strftime("%d/%m/%Y") %></small></p>
+        <h4 class="card-title"><%= post.capitalize_title%></h4>
+        <h6 class="card-author">By <%= post.author%></h6>
+        <p class="card-text"><%= post.body%></p>
+        <button class="btn btn-outline-success"><%= link_to 'Read More', post%></button>
+       
+      </div>
+    </div>
+  </div>
+  </div>
+  <% end %>
+</section>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= post.author %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>

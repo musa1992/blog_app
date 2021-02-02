@@ -6,6 +6,12 @@ class Post < ApplicationRecord
     validate :minimum_word_count
     validates :author, format: {with: VALID_TEXT_REGEX},
               length: {in: 4..30}
+
+    def capitalize_title
+        title.split(" ").map do |word|
+           word.capitalize 
+        end.join(" ")
+    end
     private
 
     def minimum_word_count

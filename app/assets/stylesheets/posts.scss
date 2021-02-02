@@ -9,10 +9,33 @@
      height: 80px;
  }
  
+ 
  #logo {
     height: 50px;
    float: left; 
  }
 
+ .content-area {
+     display: grid;
+     grid-row-gap: 30px;
+     padding-left: 70px;
+ }
+
+ .card {
+     border-bottom: 0.5px solid lightgrey;
+     padding-bottom: 30px;
+
+ }
+ .card-title {
+     font-size: 20px;
+     font-weight: bold;
+     font-style: italic;
+ }
+
+ 
+ .card-text {   
+     height: 100px;
+     margin-bottom: 40px;
+ }
 
  
