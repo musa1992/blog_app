@@ -1,19 +1,23 @@
 <p id="notice"><%= notice %></p>
+<section class="show-container">
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+  <p>
+    <%= @post.created_at.strftime("%d/%m/%Y") %>
+  </p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
+  <p>
+    <%= @post.title %>
+  </p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @post.author %>
-</p>
+  <p>
+    <%= @post.author %>
+  </p>
+  <p>
+    <%= @post.body%>
+  </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <button class="btn btn-primary-outline"><%= link_to 'Edit', edit_post_path(@post) %></button>
+ 
+
+</section>
+
