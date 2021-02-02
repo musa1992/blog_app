@@ -12,6 +12,11 @@ class Post < ApplicationRecord
            word.capitalize 
         end.join(" ")
     end
+
+    def image_url
+        return 'https://bikozulu.co.ke/wp-content/uploads/2020/12/baba-740x560.jpg' if photo_url.blank?
+        photo_url
+    end
     private
 
     def minimum_word_count
