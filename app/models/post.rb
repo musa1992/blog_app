@@ -17,6 +17,10 @@ class Post < ApplicationRecord
         return 'https://bikozulu.co.ke/wp-content/uploads/2020/12/baba-740x560.jpg' if photo_url.blank?
         photo_url
     end
+
+    def self.ordered_post
+        Post.order("created_at DESC")
+    end
     private
 
     def minimum_word_count
