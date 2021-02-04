@@ -17,7 +17,37 @@
   </p>
 
   <button class="btn btn-primary-outline"><%= link_to 'Edit', edit_post_path(@post) %></button>
- 
+</section>
+
+<section class="comment-container">
+<div class="comment-form">
+  <p>Leave a Reply</p>
+  <p>Your email address will not be published</p>
+  <div class="comment-form">
+   <%= form_with model: [@post, @post.comments.build] do |form| %>
+   <p>
+    <%= form.text_area :body%>
+   </p>
+   <p>
+    <%= form.text_field :name%>
+   </p>
+   <p>
+    <%= form.text_field :email%>
+   </p>
+   <p>
+    <%= form.submit %>
+   </p>
+   <% end %>
+  </div>
+</div>
+<div class="comments">
+<p>COMMENTS</p>
+
+<% @post.comments.each do |comment|%> 
+  <p><%= comment.name%> SAYS:</p>
+  <p><%= comment.body%></p>
+<% end %>
+</div>
 
 </section>
 

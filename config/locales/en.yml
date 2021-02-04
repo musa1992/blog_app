@@ -32,5 +32,6 @@
 en:
   helpers:
     submit:
-      create: "Publish"
+      create: "Submit"
       update: "Update Post"
+

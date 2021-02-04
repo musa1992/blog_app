@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-    has_many: comments
+    has_many :comments
     VALID_TEXT_REGEX = /\w+/
     validates :title, format: {with: VALID_TEXT_REGEX},
                 length: {in: 10..70}
