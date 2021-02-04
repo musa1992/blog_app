@@ -25,23 +25,27 @@
   <p>Your email address will not be published</p>
   <div class="comment-form">
    <%= form_with model: [@post, @post.comments.build] do |form| %>
-   <p>
+   <div class="comment-body">
     <%= form.text_area :body%>
-   </p>
-   <p>
-    <%= form.text_field :name%>
-   </p>
-   <p>
-    <%= form.text_field :email%>
-   </p>
-   <p>
-    <%= form.submit %>
-   </p>
+   </div>
+   <div class="comment-text">
+    <div>
+      <%= form.text_field :name%>
+    </div>
+    <div>
+      <%= form.text_field :email%>
+    </div>
+   </div>
+   
+   <button class="comment-btn">
+    SUBMIT COMMENT
+    <%form.submit %>
+   </button>
    <% end %>
   </div>
 </div>
 <div class="comments">
-<p>COMMENTS</p>
+<p><%= @post.comments.count%> COMMENTS</p>
 
 <% @post.comments.each do |comment|%> 
   <p><%= comment.name%> SAYS:</p>

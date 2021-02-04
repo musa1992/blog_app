@@ -22,6 +22,7 @@ class Post < ApplicationRecord
     def self.ordered_post
         Post.order("created_at DESC")
     end
+
     private
 
     def minimum_word_count
